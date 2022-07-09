@@ -20,7 +20,7 @@ if len(sys.argv) == 2:
                     string += alphabet[alphabet.index(v) + 26]
                 else:
                     string += alphabet[alphabet.index(v) - 26]
- 
     print(string)
 else:
     print("Usage: {0} <name>".format(sys.argv[0]))
+  
