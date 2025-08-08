@@ -6,21 +6,25 @@ alphabet = ["A", "a", "B", "b", "C", "c", "D", "d", "E", "e", "F", "f", "G", "g"
  
 numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  
-if len(sys.argv) == 2:
-    string = ""
-    for n in sys.argv[1]:
-        if n == " ":
-            string += n
-        for c in numbers:
-            if n == str(c):
-                string += str(c)
-        for v in alphabet:
-            if n == v:
-                if alphabet.index(v) < 26:
-                    string += alphabet[alphabet.index(v) + 26]
-                else:
-                    string += alphabet[alphabet.index(v) - 26]
-    print(string)
+if len(sys.argv) > 1:
+	string = ""
+	for i in range (1, len(sys.argv)):
+		for n in sys.argv[i]:
+			if n == " ":
+				string += n
+			for c in numbers:
+				if n == str(c):
+					string += str(c)
+			for v in alphabet:
+				if n == v:
+					if alphabet.index(v) < 26:
+						string += alphabet[alphabet.index(v) + 26]
+					else:
+						string += alphabet[alphabet.index(v) - 26]
+			if n not in str(numbers) and n not in alphabet:
+				string += n
+		string += " "
+	print(string)
 else:
-    print("Usage: {0} <input>".format(sys.argv[0]))
-  
+	print("Usage: {0} <input>".format(sys.argv[0]))
+
